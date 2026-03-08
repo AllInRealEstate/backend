@@ -1,0 +1,48 @@
+{
+  "name": "all-in-backend",
+  "version": "1.0.0",
+  "description": "Backend for ALL IN Real Estate",
+  "main": "server.js",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:socket": "jest tests/socket",
+    "test:integration": "jest tests/socket.integration.test.js"
+  },
+  "keywords": [
+    "real-estate",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.86.0",
+    "axios": "^1.13.2",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.0",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.13",
+    "resend": "^6.5.2",
+    "sharp": "^0.34.5",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "node-mocks-http": "^1.17.2",
+    "nodemon": "^3.1.11",
+    "socket.io-client": "^4.8.3",
+    "supertest": "^7.2.2"
+  }
+}

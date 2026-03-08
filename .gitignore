@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+.env.test
+.env.local
+.env.production
+.env*
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+tmp/
+temp/

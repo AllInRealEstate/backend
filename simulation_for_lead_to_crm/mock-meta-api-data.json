@@ -1,0 +1,162 @@
+{
+  "pages": {
+    "919250651278946": {
+      "id": "919250651278946",
+      "name": "Test Real Estate Page",
+      "category": "Real Estate Developer",
+      "category_list": [
+        {
+          "id": "162532913805106",
+          "name": "Real Estate Developer"
+        }
+      ]
+    },
+    "17841405822304914": {
+      "id": "17841405822304914",
+      "name": "Real Estate Insta",
+      "category": "Real Estate Service",
+      "category_list": [
+        {
+          "id": "2700",
+          "name": "Instagram Business Account"
+        },
+        {
+          "id": "162532913805106",
+          "name": "Real Estate Service"
+        }
+      ]
+    }
+  },
+  "leads": {
+    "FB_LEAD_001": {
+      "id": "FB_LEAD_001",
+      "created_time": "2026-01-20T10:00:00+0000",
+      "field_data": [
+        {
+          "name": "full_name",
+          "values": ["John Smith"]
+        },
+        {
+          "name": "email",
+          "values": ["john.smith@example.com"]
+        },
+        {
+          "name": "phone_number",
+          "values": ["+972501234567"]
+        },
+        {
+          "name": "what_service_do_you_need?",
+          "values": ["buying_property"]
+        },
+        {
+          "name": "tell_us_more",
+          "values": ["Looking for 3-bedroom apartment in Tel Aviv"]
+        }
+      ]
+    },
+    "IG_LEAD_001": {
+      "id": "IG_LEAD_001",
+      "created_time": "2026-01-20T10:00:30+0000",
+      "field_data": [
+        {
+          "name": "full_name",
+          "values": ["Sarah Cohen"]
+        },
+        {
+          "name": "email",
+          "values": ["sarah.cohen@example.com"]
+        },
+        {
+          "name": "phone_number",
+          "values": ["+972509876543"]
+        },
+        {
+          "name": "what_service_do_you_need?",
+          "values": ["selling_my_property"]
+        },
+        {
+          "name": "tell_us_more",
+          "values": ["Want to sell my apartment ASAP"]
+        }
+      ]
+    },
+    "FB_LEAD_002": {
+      "id": "FB_LEAD_002",
+      "created_time": "2026-01-20T10:01:00+0000",
+      "field_data": [
+        {
+          "name": "full_name",
+          "values": ["David Levi"]
+        },
+        {
+          "name": "email",
+          "values": ["david.levi@example.com"]
+        },
+        {
+          "name": "phone_number",
+          "values": ["+972502345678"]
+        },
+        {
+          "name": "what_service_do_you_need?",
+          "values": ["renting"]
+        },
+        {
+          "name": "tell_us_more",
+          "values": ["Need rental in Haifa area"]
+        }
+      ]
+    },
+    "IG_LEAD_002": {
+      "id": "IG_LEAD_002",
+      "created_time": "2026-01-20T10:01:30+0000",
+      "field_data": [
+        {
+          "name": "full_name",
+          "values": ["Rachel Ben-David"]
+        },
+        {
+          "name": "email",
+          "values": ["rachel.bendavid@example.com"]
+        },
+        {
+          "name": "phone_number",
+          "values": ["+972503456789"]
+        },
+        {
+          "name": "what_service_do_you_need?",
+          "values": ["land"]
+        },
+        {
+          "name": "tell_us_more",
+          "values": ["Interested in land for development"]
+        }
+      ]
+    },
+    "IG_LEAD_003": {
+      "id": "IG_LEAD_003",
+      "created_time": "2026-01-20T10:02:00+0000",
+      "field_data": [
+        {
+          "name": "full_name",
+          "values": ["Michael Green"]
+        },
+        {
+          "name": "email",
+          "values": ["michael.green@example.com"]
+        },
+        {
+          "name": "phone_number",
+          "values": ["+972504567890"]
+        },
+        {
+          "name": "what_service_do_you_need?",
+          "values": ["consulting"]
+        },
+        {
+          "name": "tell_us_more",
+          "values": ["Need advice on property investment"]
+        }
+      ]
+    }
+  }
+}
