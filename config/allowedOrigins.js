@@ -7,8 +7,7 @@ const allowedOrigins = [
   'https://allin-real-estate-website-production.up.railway.app',
   "https://www.allinrealestate.net",
   "https://allinrealestate.net",
-  "https://admin.allinrealestate.net",
-  "https://website-production-ebb6.up.railway.app"
+  "https://admin.allinrealestate.net"
 ];
 
 module.exports = allowedOrigins;

@@ -1,12 +1,17 @@
 const nodemailer = require('nodemailer');
 
-// 1. Configure the Nodemailer Transporter
+//  1. Configure the Nodemailer Transporter for Cloud Servers
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,        
+    secure: false,    
     auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_APP_PASSWORD,
     },
+    tls: {
+        rejectUnauthorized: false
+    }
 });
 
 // 2. Helper function to handle the actual sending
