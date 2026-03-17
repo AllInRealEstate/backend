@@ -79,6 +79,7 @@ class LeadService {
       }
     }
 
+    /*
     // 5. Search (Regex on multiple fields)
     if (filters.search && filters.search.trim() !== '') {
       const escapedSearch = filters.search.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -90,6 +91,56 @@ class LeadService {
         { phoneNumber: regex },
         { inquiryType: regex }
       ];
+    }
+      */
+
+    // 5. Search (Regex on multiple fields)
+    if (filters.search && filters.search.trim() !== '') {
+      const escapedSearch = filters.search.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      
+      // Standard search for text fields (Anywhere in the string)
+      const textRegex = new RegExp(escapedSearch, 'i');
+      
+      // Initialize the $or array with your full text scope (including message!)
+      query.$or = [
+        { fullName: textRegex },
+        { email: textRegex },
+        { inquiryType: textRegex },
+        { message: textRegex }       // <--- Message scope included here
+      ];
+
+      // --- ADVANCED PHONE NUMBER SEARCH ---
+      // 1. Extract ONLY the numbers the user typed
+      const searchDigits = filters.search.replace(/\D/g, '');
+
+      if (searchDigits.length > 0) {
+        // --- CONDITION A: ENDS WITH (Exact match at the end) ---
+        // \D* ignores dashes/spaces in the database
+        const endsWithPattern = searchDigits.split('').join('\\D*');
+        const endsWithRegex = new RegExp(`${endsWithPattern}\\D*$`, 'i');
+
+        // --- CONDITION B: STARTS WITH (Ignores country code and leading zero) ---
+        // If the user typed a leading zero (e.g., 050123), remove it for the pattern.
+        // The regex `0?` will handle checking if the database actually has the zero or not.
+        let startsWithDigits = searchDigits;
+        if (startsWithDigits.startsWith('0')) {
+          startsWithDigits = startsWithDigits.substring(1);
+        }
+        
+        const startsWithPattern = startsWithDigits.split('').join('\\D*');
+
+        // ^(?:\\+\\d{1,4}\\D*)? -> Ignores optional country code like +972, +1, etc.
+        // 0?\\D* -> Ignores an optional leading zero in the database
+        const startsWithRegex = new RegExp(`^(?:\\+\\d{1,4}\\D*)?0?\\D*${startsWithPattern}`, 'i');
+
+        // Add the advanced phone rules to the $or array
+        query.$or.push({ phoneNumber: startsWithRegex });
+        query.$or.push({ phoneNumber: endsWithRegex });
+      } else {
+        // Fallback: If they searched for a non-numeric character (like typing just "+"),
+        // use the standard text search for the phone number field too.
+        query.$or.push({ phoneNumber: textRegex });
+      }
     }
 
     return query;
