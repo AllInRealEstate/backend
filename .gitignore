@@ -18,7 +18,15 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Temporary files
-*.tmp
-tmp/
+# temp
 temp/
+
+# scripts
+test-mongo.js
+test-mongo_1.js
+
+# simulations
+simulation_for_lead_to_crm/
+
+# admin script
+createAdmin.js
